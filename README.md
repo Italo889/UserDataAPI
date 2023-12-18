@@ -17,25 +17,13 @@ UserDataAPI is a robust RESTful service designed to facilitate CRUD operations f
 - Web Framework: [Express](https://expressjs.com/)
 - Database: [PostgreSQL](https://www.postgresql.org/)
 
-## Installation
-
-UserDataAPI requires [Node.js](https://nodejs.org/) v10+ to run.
-
-Install the dependencies and devDependencies and start the server.
-
-```sh
-cd dillinger
-npm i
-node app
-```
-
 ## Getting Started
 Follow these steps to set up and run the UserDataAPI on your local machine:
 
 Clone the Repository:
 
 ```sh
-git clone https://github.com/your-username/UserManagementAPI.git
+git clone https://github.com/your-username/UserDataAPI.git
 ```
 
 Navigate to the Project Directory:
@@ -51,7 +39,7 @@ npm install
 
 Run the Application:
 ```sh
-npm run serve
+node app
 ```
 
 ## Explore the API:
