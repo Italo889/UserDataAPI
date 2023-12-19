@@ -2,7 +2,6 @@
 
 import { _db_recover } from "./db.controller.internal.js";
 
-const temporary_db = await _db_recover();
 
 const db_consult = {
 
@@ -12,7 +11,8 @@ const db_consult = {
      * @returns {object} Data from this ID
      */
     async get(UID){
-        return JSON.parse(temporary_db).filter(item => item.uid === UID)
+        const temporary_db = await _db_recover();
+        return JSON.parse(temporary_db).filter(item => item.uid === UID)[0]
     },
 
     /**
@@ -20,6 +20,7 @@ const db_consult = {
      * @returns {object[]} General data from DB
      */
     async all(){
+        const temporary_db = await _db_recover();
         return JSON.parse(temporary_db);
     }
 }

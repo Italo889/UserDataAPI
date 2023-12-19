@@ -16,10 +16,10 @@ async function db_delete(UID){
     const actual_data = await db_consult.all();
 
     if(!actual_data.find(item => item.uid === UID)){
-        return JSON.stringify({
+        return {
             info: "This data not exists",
             error: "Not find"
-        })
+        };
     }
 
     const new_temporary_db = actual_data.filter(item => item.uid !== UID);
