@@ -30,10 +30,7 @@ async function db_update(new_data, UID){
 
     await _db_persist(new_temporary_db);
 
-    return JSON.stringify({
-        info: "Your data is updated",
-        uid: UID
-    })
+    return { info: "Your data is updated", uid: UID }
 }
 
 export { db_update }

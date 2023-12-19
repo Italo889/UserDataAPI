@@ -26,10 +26,7 @@ async function db_delete(UID){
 
     await _db_persist(new_temporary_db);
 
-    return JSON.stringify({
-        info: "Data deleted",
-        uid: UID
-    })
+    return { info: "Data deleted", uid: UID}
 }
 
 export { db_delete };

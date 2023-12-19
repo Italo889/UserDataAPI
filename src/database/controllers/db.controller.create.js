@@ -33,10 +33,7 @@ async function db_create(data){
 
     await _db_persist(data_to_persist);
     
-    return JSON.stringify({
-        info: "New data created",
-        uid: UID
-    });
+    return {info: "New data created", uid: UID};
 };
 
 function _insert(data, uid){
