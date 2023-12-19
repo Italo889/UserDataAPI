@@ -21,6 +21,24 @@ describe("Database workflows", () => {
             _test_uid = action.uid;
         });
 
+        it("Basic mult creations", async () => {
+            let temps = [
+                {
+                    name: "Teste TEMP 1",
+                    email: "test1@email.com",
+                    age: 332
+                },
+                {
+                    name: "Teste TEMP 2",
+                    email: "test2@email.com",
+                    age: 333
+                }
+            ]
+            const action = await Database.create(temps);
+
+            deepStrictEqual(Array.isArray(action.uid), true);
+        });
+
     });
 
     describe("DB - consult's", () => {
@@ -55,7 +73,7 @@ describe("Database workflows", () => {
     });
 
     describe("DB - Delete's", () => {
-        it("Delete random data", async () => {
+        it("Delete data", async () => {
             const action = await Database.delete(_test_uid);
             deepStrictEqual(action.uid, _test_uid);
         });
